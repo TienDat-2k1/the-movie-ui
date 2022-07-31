@@ -1,7 +1,7 @@
 import './UserPopUpSelection.scss';
-function UserPopUpSelection({ children }) {
+function UserPopUpSelection({ children, ...otherProps }) {
   return (
-    <div className="user-popup-container">
+    <div className="user-popup-container" {...otherProps}>
       <ul className="user-list-items">{children}</ul>
     </div>
   );

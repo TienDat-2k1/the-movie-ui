@@ -33,6 +33,17 @@ $color--green-light: #edf4ff;
     border-radius: 2px;
     border-top: 2px solid #ccc;
   }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+
+    width: 100px;
+    height: 40px;
+
+    background-color: transparent;
+  }
 }
 .user-list-items {
   display: flex;

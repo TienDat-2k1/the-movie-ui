@@ -11,8 +11,8 @@ $color--green-light: #edf4ff;
   padding: 15px 10px 0 10px;
 
   position: absolute;
-  top: 100%;
-  right: 11.5%;
+  top: 150%;
+  right: -140%;
 
   border-radius: 10px;
   border-right: 2px solid #ccc;
@@ -40,6 +40,17 @@ $color--green-light: #edf4ff;
     transform: rotate(55deg);
     border-radius: 2px;
     border-top: 2px solid #ccc;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+
+    width: 200px;
+    height: 60px;
+
+    background-color: transparent;
   }
 
   .view-all-history {

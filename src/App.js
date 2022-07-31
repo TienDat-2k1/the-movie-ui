@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
-import HomePage from './home/HomePage';
+import Navigate from './router/navigate/Navigate';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate />} />
       </Routes>
     </>
   );

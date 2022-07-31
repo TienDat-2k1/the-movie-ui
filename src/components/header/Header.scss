@@ -1,5 +1,5 @@
 $primary--color: #eb1c24;
-
+$color--dark-light: #1a171e;
 header {
   height: 10vh;
   line-height: 10vh;
@@ -30,12 +30,18 @@ header {
     quotes: 40px;
     height: 40px;
     padding: 10px;
-    text-align: center;
+    // text-align: center;
     border-radius: 50%;
     border: 2px solid #fff;
     margin: 0 10px;
 
+    position: relative;
+
     cursor: pointer;
+
+    & > * {
+      font-family: 'Poppins', sans-serif;
+    }
   }
 }
 .header-container {
@@ -118,10 +124,18 @@ header {
     top: 0;
     bottom: 0;
     right: 20px;
+    padding: 0 20px;
     margin: auto;
-    // background-color: #fff;
+
+    background-color: transparent;
     // color: $primary--color;
     z-index: 999;
+
+    i {
+      &.black-light {
+        background-color: $color--dark-light;
+      }
+    }
   }
   .account {
     display: none;
@@ -136,7 +150,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $primary--color;
+    background-color: $color--dark-light;
     z-index: 998;
 
     animation: moveInRight 0.3s ease-in-out;
