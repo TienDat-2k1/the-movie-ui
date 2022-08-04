@@ -1,0 +1,58 @@
+.prev-arrow-container {
+  //   background-color: blue;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 20px 0 40px;
+  i {
+    font-size: 50px;
+    color: #ccc;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    transition: all 0.2s linear;
+    background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.3)
+    );
+
+    i {
+      opacity: 1;
+      cursor: pointer;
+
+      &:active {
+        animation: bump 0.2s ease-in-out;
+      }
+    }
+
+    @keyframes bump {
+      0% {
+        transform: scale(0.9);
+      }
+      80% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .prev-arrow-container {
+    display: none;
+  }
+}

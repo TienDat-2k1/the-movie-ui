@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/img/Act_of_valor.svg';
-import UserIcon from '../user-icon/UserIcon';
-import UserPopUpSelection from '../user-popup-selection/UserPopUpSelection';
-import ViewHistoryPopup from '../view-history-popup/ViewHistoryPopup';
+import UserIcon from './user-icon/UserIcon';
+import UserPopUpSelection from './user-popup-selection/UserPopUpSelection';
+import ViewHistoryPopup from './view-history-popup/ViewHistoryPopup';
 import './Header.scss';
 import HeaderNavLink from './HeaderNavLink';
 

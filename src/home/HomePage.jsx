@@ -1,10 +1,10 @@
-import Header from '../components/header/Header';
+import Homes from '../components/homes/Homes';
 
 function HomePage() {
   return (
-    <div>
-      <Header />
-    </div>
+    <>
+      <Homes />
+    </>
   );
 }
 export default HomePage;

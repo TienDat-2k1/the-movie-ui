@@ -1,0 +1,21 @@
+.movie-detail-containers {
+  width: 100%;
+  height: 100%;
+
+  color: #fff;
+
+  position: relative;
+
+  .fullscreen {
+    height: 70vh;
+    width: 100%;
+  }
+}
+.movie-detail-layout-container {
+  margin-top: 70px;
+
+  height: fit-content;
+
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+}

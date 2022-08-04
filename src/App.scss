@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #17171b;
   //   font-size: 62.5%;
 }
 
@@ -32,17 +33,7 @@ ul {
   justify-content: center;
   align-items: center;
 }
-button {
-  background-color: #eb1c24;
-  outline: none;
-  border: none;
-  color: #fff;
-  padding: 12px 40px;
-  font-weight: 500;
-  font-size: 17px;
 
-  border-radius: 200px;
-}
 .hide {
   display: none;
 }
