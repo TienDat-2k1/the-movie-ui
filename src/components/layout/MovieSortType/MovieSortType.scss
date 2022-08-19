@@ -1,0 +1,33 @@
+@use '../../../sass/variable' as *;
+
+.sort {
+  &__list {
+    list-style: none;
+
+    display: flex;
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__item {
+    padding: 1rem 2rem;
+    border-radius: 200px;
+    border: 2px solid $color--grey-dark;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &--active {
+      border-color: $color--primary;
+      color: $color--primary;
+      font-weight: 600;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 2rem 4rem rgba($color--black, 0.4);
+    }
+  }
+}

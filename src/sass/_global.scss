@@ -1,0 +1,88 @@
+@import './mixin';
+@import './function';
+@import './animation';
+@import './variable';
+@import './typography';
+@import url('https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Lobster&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&family=Rubik+Distressed&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(tablet) {
+    font-size: 56.25%;
+  }
+
+  @include respond(mobile) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: $color--grey-light-3;
+  line-height: 1.6;
+  font-weight: 300;
+  background-color: #0e0f15;
+}
+
+.container {
+  max-width: 124rem;
+  margin: 0 auto;
+}
+
+//*MARGIN
+.mt-small {
+  margin-top: 2rem;
+}
+.mt-medium {
+  margin-top: 4rem;
+
+  @include respond(mobile) {
+    margin-top: 2rem;
+  }
+}
+.mt-large {
+  margin-top: 6rem;
+}
+
+.mr-small {
+  margin-right: 2rem;
+}
+.mr-medium {
+  margin-right: 4rem;
+}
+.mr-large {
+  margin-right: 6rem;
+}
+
+.mb-small {
+  margin-bottom: 2rem;
+}
+.mb-medium {
+  margin-bottom: 4rem;
+  @include respond(mobile) {
+    margin-bottom: 1rem;
+  }
+}
+.mb-large {
+  margin-bottom: 6rem;
+}
+
+.ml-small {
+  margin-left: 2rem;
+}
+.ml-medium {
+  margin-left: 4rem;
+}
+.ml-large {
+  margin-left: 6rem;
+}
+// * END MARGIN

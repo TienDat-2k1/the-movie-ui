@@ -1,0 +1,64 @@
+@use '../../../sass/variable' as *;
+
+.movies {
+  display: grid;
+  // min-height: 40vh;
+  grid-template-rows: 2rem max-content 1fr;
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+
+  &__heading {
+    grid-row: 2 / 3;
+
+    font-weight: 600;
+    font-size: 3rem;
+    text-transform: capitalize;
+  }
+
+  &__actions {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    justify-self: end;
+    align-self: center;
+  }
+
+  &__seeall::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color--primary;
+  }
+
+  &__seeall {
+    font-size: 1.6rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-right: 2rem;
+    display: inline-block;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__seeall:hover,
+  &__seeall:active {
+    color: rgba($color--primary, 0.8);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 1rem 2rem rgba($color--black, 0.15);
+  }
+
+  &__seeall:hover::after {
+    width: 100%;
+  }
+
+  &__list {
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+
+    padding-top: 1rem;
+  }
+}

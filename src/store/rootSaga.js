@@ -1,7 +1,6 @@
 import { call, all } from 'redux-saga/effects';
-import { homeSaga } from './homeActions/homeSaga';
-
+import movieSaga from './movie/movieSaga';
 function* rootSaga() {
-  yield all([call(homeSaga)]);
+  yield all([call(movieSaga)]);
 }
 export default rootSaga;

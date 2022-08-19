@@ -1,10 +1,6 @@
-import MoviePage from '../../components/pages/movie-page/MoviePage';
+// import MoviePage from '../../components/pages/movie-page/MoviePage';
 
 function Movie() {
-  return (
-    <>
-      <MoviePage />
-    </>
-  );
+  return <>{/* <MoviePage /> */}</>;
 }
 export default Movie;

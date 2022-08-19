@@ -1,0 +1,53 @@
+@use '../../../sass/variable' as *;
+
+.pagination {
+  // width: 100%;
+
+  // font-size: $font-size--default;
+  // position: relative;
+
+  &__list {
+    list-style: none;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    & > *:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__item {
+    color: $color--grey-light-1;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 1px solid $color--grey-dark;
+
+    &--active {
+      color: $color--primary;
+      border-color: $color--primary;
+      font-weight: 800;
+      font-size: 1.7rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+.center {
+  color: $color--primary;
+}

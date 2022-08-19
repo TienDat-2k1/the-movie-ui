@@ -1,0 +1,73 @@
+.user-popup-container {
+  width: 200px;
+  background-color: #fafafa;
+  padding: 15px 10px;
+  position: absolute;
+  top: 100%;
+  right: 6%;
+  border-radius: 10px;
+  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  z-index: 999;
+}
+.user-popup-container::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fafafa;
+  top: -8px;
+  right: 15%;
+  transform: rotate(55deg);
+  border-radius: 2px;
+  border-top: 2px solid #ccc;
+}
+.user-popup-container::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+}
+
+.user-list-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-list-items .user-item {
+  display: flex;
+  padding-left: 8px;
+  height: 45px;
+  line-height: 45px;
+  color: #000;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.user-list-items .user-item img {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  transform: translateX(-8px);
+}
+.user-list-items .user-item span {
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+.user-list-items .user-item i {
+  transform: translateX(-8px);
+}
+.user-list-items .user-item:hover {
+  background-color: #edf4ff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.user-list-items .user-item ~ .user-item {
+  border-top: 2px solid #ccc;
+}/*# sourceMappingURL=UserPopUpSelection.css.map */

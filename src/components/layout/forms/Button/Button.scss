@@ -1,0 +1,44 @@
+@use '../../../../sass/variable' as *;
+@use '../../../../sass/mixin' as *;
+
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 200px;
+  font-size: 2rem;
+  color: $color--grey-light-1;
+  box-shadow: 0 2rem 3rem rgba($color--black, 0.15);
+  transition: all 0.2s;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2rem 3rem rgba($color--black, 0.4);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--primary {
+    background-color: $color--primary;
+    font-weight: 600;
+    padding: 1.5rem 4rem;
+
+    @include respond(mobile) {
+      padding: 1.5rem 3.5rem;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    font-weight: 600;
+    padding: 1.5rem 3.5rem;
+    border: 2px solid $color--grey-dark-2;
+
+    @include respond(mobile) {
+      padding: 1rem 2.5rem;
+    }
+  }
+}

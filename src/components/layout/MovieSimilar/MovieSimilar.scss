@@ -1,0 +1,116 @@
+@use '../../../sass/variable' as *;
+@use '../../../sass/mixin' as *;
+
+.similar {
+  &__list {
+    list-style: none;
+
+    & > *:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__poster {
+    width: 10rem;
+    height: 12rem;
+    border-radius: 10px;
+
+    overflow: hidden;
+    position: relative;
+
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      background-image: linear-gradient(
+        to top right,
+        rgba($color--black, 0.4),
+        rgba($color--black, 0.2),
+        rgba($color--black, 0.1),
+        rgba($color--black, 0)
+      );
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__content {
+    margin-left: 1.5rem;
+    flex: 1;
+
+    position: relative;
+  }
+
+  &__title {
+    font-size: 2.1rem;
+
+    height: 5rem;
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__vote {
+    width: 5rem;
+    height: 5rem;
+
+    flex: 0 0 5rem;
+
+    & span {
+      position: absolute;
+      z-index: 10;
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__description {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__description--right {
+    margin-left: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__release {
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+
+  &__time {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}

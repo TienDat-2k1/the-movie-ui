@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from '@redux-saga/core';
 import rootSaga from './rootSaga';
-import wishlistSlice from './wishlist/wishlistSlice';
-
+import movieSlice from './movie/movieSlice';
 const saga = createSagaMiddleware();
 
 const store = configureStore({
-  reducer: { wishlist: wishlistSlice },
+  reducer: { movie: movieSlice },
   middleware: [saga],
 });
 
