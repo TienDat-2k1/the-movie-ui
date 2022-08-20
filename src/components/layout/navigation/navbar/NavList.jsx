@@ -1,18 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function NavList({ isNavMobile, setIsNavMobile }) {
   return (
     <div className={`nav__list ${isNavMobile ? 'nav__list--active' : ''}`}>
       {/* nav__list--active */}
       <div className="nav__item">
-        <Link to="/movie" href="#" className="nav__link nav__link--active">
+        <NavLink
+          to="/movie"
+          href="#"
+          className={({ isActive }) =>
+            isActive ? 'nav__link nav__link--active' : 'nav__link'
+          }
+        >
           Movie
-        </Link>
+        </NavLink>
       </div>
       <div className="nav__item">
-        <Link to="/tvshow" href="#" className="nav__link">
+        <NavLink
+          to="/tvshow"
+          href="#"
+          className={({ isActive }) =>
+            isActive ? 'nav__link nav__link--active' : 'nav__link'
+          }
+        >
           TvShow
-        </Link>
+        </NavLink>
       </div>
       <div className="nav__item">
         <Link to="/series" href="#" className="nav__link">

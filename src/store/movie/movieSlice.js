@@ -8,6 +8,11 @@ const initialState = {
   filterGenres: [],
   totalPage: 0,
   pageActive: 1,
+  search: {
+    key: '',
+    history: [],
+    page: 1,
+  },
 };
 
 const movieSlice = createSlice({
@@ -17,6 +22,7 @@ const movieSlice = createSlice({
     fetchMovieGridStart: (state, action) => {
       state.isLoading = true;
       state.error = undefined;
+      state.sortType = action.payload.type;
       state.pageActive = action.payload.page;
     },
     fetchMovieGridSuccess: (state, action) => {
@@ -60,6 +66,12 @@ const movieSlice = createSlice({
     setSortType: (state, action) => {
       state.sortType = action.payload;
     },
+    setSearchKey: (state, action) => {
+      state.search.key = action.payload;
+    },
+    setSearchPage: (state, action) => {
+      state.search.page = action.payload;
+    },
   },
 });
 
@@ -72,6 +84,8 @@ export const {
   filterWithGenresError,
   setPageActive,
   setSortType,
+  setSearchKey,
+  setSearchPage,
 } = movieSlice.actions;
 
 export default movieSlice.reducer;

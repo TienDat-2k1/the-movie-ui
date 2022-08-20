@@ -9,6 +9,7 @@ import MovieDetail from './views/movie-detail/MovieDetail';
 import Movie from './views/movie/Movie';
 
 import './sass/_global.scss';
+import SearchResults from './views/search/SearchResults';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
 
           <Route path="/movie" element={<Movie />} />
           <Route path="/movie/:idMovie" element={<MovieDetail />} />
+
+          <Route path="/search-results" element={<SearchResults />} />
+
           {/* <Route path="/movie/:idMovie" element={<MovieDetailPage />} /> */}
         </Route>
         {/* <Route path="auth" element={<Auth />}>

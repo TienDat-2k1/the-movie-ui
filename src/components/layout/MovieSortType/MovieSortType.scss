@@ -2,15 +2,29 @@
 
 .sort {
   &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
     list-style: none;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+    & > * {
+      margin-top: 2rem;
+    }
+
     & > *:not(:last-child) {
       margin-right: 2rem;
     }
   }
 
   &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem 2rem;
     border-radius: 200px;
     border: 2px solid $color--grey-dark;

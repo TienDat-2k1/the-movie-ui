@@ -30,3 +30,13 @@ export const sortTypeSelector = createSelector(
   [movieReducer],
   movie => movie.sortType
 );
+
+export const searchKeySelector = createSelector(
+  [movieReducer],
+  movie => movie.search.key
+);
+
+export const searchPageSelector = createSelector(
+  [movieReducer],
+  movie => movie.search.page
+);
