@@ -1,0 +1,19 @@
+.search-results {
+  min-height: 100vh;
+
+  &__header {
+    height: 16rem;
+  }
+}
+
+.results__heading {
+  transform: translateY(10rem);
+}
+
+.result-notfound {
+  height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

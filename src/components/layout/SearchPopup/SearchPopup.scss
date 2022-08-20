@@ -1,0 +1,14 @@
+@use '../../../sass/variable' as *;
+
+.search-popup {
+  min-height: 40rem;
+  background-color: $color--secondary;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 1rem 2rem 3rem rgba($color--grey-light-1, 0.4);
+}
