@@ -1,4 +1,5 @@
 @use '../../../sass/variable' as *;
+@use '../../../sass/mixin' as *;
 
 .movies {
   display: grid;
@@ -11,8 +12,19 @@
     grid-row: 2 / 3;
 
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 3.2rem !important;
     text-transform: capitalize;
+
+    padding-left: 2.5rem;
+    border-left: 4px solid $color--primary;
+
+    @include respond(tablet) {
+      font-size: 2.8rem !important;
+    }
+
+    @include respond(mobile) {
+      font-size: 2.4rem !important;
+    }
   }
 
   &__actions {

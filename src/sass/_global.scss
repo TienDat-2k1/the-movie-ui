@@ -37,6 +37,14 @@ body {
 .container {
   max-width: 124rem;
   margin: 0 auto;
+
+  @include respond(tablet) {
+    max-width: 100rem;
+  }
+
+  @include respond(mobile) {
+    margin: 0 2rem;
+  }
 }
 
 //*MARGIN

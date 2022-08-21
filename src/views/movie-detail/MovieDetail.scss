@@ -6,6 +6,10 @@
     position: relative;
     width: 100%;
     height: 65vh;
+
+    @include respond(mobile) {
+      height: 50vh;
+    }
   }
 
   &__content {

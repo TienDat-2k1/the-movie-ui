@@ -5,7 +5,7 @@ import Button from '../forms/Button/Button';
 
 function BackdropMovie({ detailMovie }) {
   const navigate = useNavigate();
-  const { backdrop_path, id, title, vote_average, vote_count } = detailMovie;
+  const { backdrop_path, title, vote_average, vote_count } = detailMovie;
 
   const redirectBackHandler = () => {
     navigate(-1);

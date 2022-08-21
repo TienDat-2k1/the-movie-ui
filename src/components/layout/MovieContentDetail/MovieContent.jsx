@@ -8,7 +8,7 @@ import MovieSimilar from '../MovieSimilar/MovieSimilar';
 
 function MovieContent({ detailMovie }) {
   const [castList, setCastList] = useState();
-  const [gridActive, setGridActive] = useState(true);
+  const [gridActive, setGridActive] = useState(false);
   const { id, title, overview, poster_path, release_date, genres } =
     detailMovie;
 
