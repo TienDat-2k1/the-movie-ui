@@ -6,6 +6,8 @@
     &-box {
       display: flex;
       align-items: center;
+
+      padding-bottom: 1rem;
     }
   }
 
@@ -26,10 +28,17 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    display: block;
+    height: 100%;
+
+    &:hover {
+      color: darken($color--primary, 80%);
+    }
   }
 
   &__information {
-    padding-top: 2rem;
+    padding: 1.5rem 0;
   }
 
   &__logout {
@@ -44,8 +53,24 @@
   &__sign-up {
     text-transform: uppercase;
   }
-  &__sign-up {
-    padding-bottom: 1.5rem;
+  // &__sign-up {
+  //   padding-bottom: 1.5rem;
+  // }
+}
+
+.sign {
+  &__link:link,
+  &__link:visited {
+    display: block;
+    text-decoration: none;
+    color: $color--grey-dark-3;
+    padding: 1.5rem 0;
+    font-weight: 600;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: darken($color: #000000, $amount: 90);
   }
 }
 

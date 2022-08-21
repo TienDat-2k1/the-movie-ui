@@ -41,4 +41,13 @@
       padding: 1rem 2.5rem;
     }
   }
+
+  &--google {
+    background-color: $color--blue-light;
+  }
+
+  &--sign {
+    background-color: $color--grey-dark;
+    color: $color--white;
+  }
 }

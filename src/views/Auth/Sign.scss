@@ -1,0 +1,59 @@
+@use '../../sass/variable' as *;
+
+.sign__container {
+  width: 40rem;
+  min-height: 10rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: #fff;
+  color: $color--grey-dark;
+
+  & .btn-container {
+    display: flex;
+    flex-direction: column;
+
+    & > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.sign {
+  &__back {
+    display: inline-block;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: -1, 5rem;
+
+    &:hover {
+      color: rgba($color--primary, 0.8);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+  }
+  &__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__btn {
+    border-radius: 2px;
+    font-size: 2.2rem;
+    padding: 1rem 0;
+
+    & > i {
+      color: $color--primary;
+      margin-right: 2rem;
+    }
+  }
+}
