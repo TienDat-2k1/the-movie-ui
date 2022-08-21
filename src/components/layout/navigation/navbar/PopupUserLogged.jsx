@@ -1,8 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { userSelector } from '../../../../store/user/userSelector';
+import { signOut } from '../../../../store/user/userSlice';
 import PopupItem from '../../headerPopUp/PopupItem';
 
 function PopupUserLogged() {
+  const dispatch = useDispatch();
   const user = useSelector(userSelector);
   if (!Object.entries(user).length) return;
   return (
@@ -31,7 +33,7 @@ function PopupUserLogged() {
       <PopupItem className="popup__user-item">
         <div className="user-item__logout">
           <i className="fa-solid fa-arrow-right-from-bracket user-item__icon"></i>
-          <span>Logout</span>
+          <span onClick={() => dispatch(signOut())}>Logout</span>
         </div>
       </PopupItem>
     </>

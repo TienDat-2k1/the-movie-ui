@@ -86,9 +86,9 @@
     font-size: 1.8rem;
     letter-spacing: 0.8px;
 
-    height: 5.5rem;
+    height: 5rem;
     overflow: hidden;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
   }

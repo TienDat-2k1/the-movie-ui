@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  signOut,
 } from 'firebase/auth';
 import {
   collection,
@@ -66,4 +67,8 @@ export const createDocFromAuth = async (user, inf = {}) => {
       console.log(error);
     }
   }
+};
+
+export const userSignOut = async () => {
+  signOut(auth);
 };

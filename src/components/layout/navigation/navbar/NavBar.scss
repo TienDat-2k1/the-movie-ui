@@ -293,9 +293,22 @@
       display: flex;
     }
 
-    & i {
+    & label {
+      display: block;
       position: absolute;
       right: 0;
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      &:hover {
+        color: $color--primary;
+        background-color: $color--grey-dark;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -322,5 +335,11 @@
     color: $color--primary;
 
     cursor: pointer;
+  }
+
+  & label {
+    :hover {
+      background-color: transparent;
+    }
   }
 }

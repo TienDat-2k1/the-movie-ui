@@ -3,6 +3,7 @@ import {
   createDocFromAuth,
   createUser,
   signInEmailAndPass,
+  userSignOut,
 } from '../../utils/firebase/firebase';
 import { signInSuccess, signUpError, signUpSuccess } from './userSlice';
 
@@ -34,6 +35,9 @@ function* signIn({ payload }) {
     alert(error.message);
   }
 }
+function* signOut() {
+  yield userSignOut();
+}
 
 function* onSignUpSuccess() {
   yield takeLatest('user/signUpSuccess', signInAfterSignUp);
@@ -46,9 +50,17 @@ function* onSignUp() {
 function* onSignIn() {
   yield takeLatest('user/signInStart', signIn);
 }
+function* onSignOut() {
+  yield takeLatest('user/signOut', signOut);
+}
 
 function* userSaga() {
-  yield all([call(onSignUpSuccess), call(onSignUp), call(onSignIn)]);
+  yield all([
+    call(onSignUpSuccess),
+    call(onSignUp),
+    call(onSignIn),
+    call(onSignOut),
+  ]);
 }
 
 export default userSaga;

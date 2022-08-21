@@ -13,3 +13,8 @@ export const userErrorSelector = createSelector(
 );
 
 export const userSelector = createSelector([userReducer], user => user.user);
+
+export const wishlistSelector = createSelector(
+  [userReducer],
+  user => user.wishlist
+);

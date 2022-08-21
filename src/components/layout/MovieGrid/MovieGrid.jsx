@@ -10,30 +10,30 @@ import Pagination from '../Pagination/Pagination';
 import Spinner from '../spinner/Spinner';
 import './MovieGrid.scss';
 
-function MovieGrid() {
-  const dispatch = useDispatch();
-  const movies = useSelector(movieGridSelect);
-  const sortType = useSelector(sortTypeSelector);
+function MovieGrid({ movieGrid, pagination }) {
+  // const dispatch = useDispatch();
+  // const movies = useSelector(movieGridSelect);
+  // const sortType = useSelector(sortTypeSelector);
 
-  useEffect(() => {
-    dispatch(fetchMovieGridStart({ type: 'popular', page: 1 }));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchMovieGridStart({ type: 'popular', page: 1 }));
+  // }, [dispatch]);
 
   return (
     <>
-      {!movies.length && <Spinner />}
-      {movies.length && (
+      {!movieGrid.length && <Spinner />}
+      {movieGrid.length && (
         <div className="movie__grid  container">
           <ul className="grid__list mb-large">
-            {movies &&
-              movies.map(grid => (
+            {movieGrid &&
+              movieGrid.map(grid => (
                 <li key={grid.id} className="grid__item">
                   <MovieCard movie={grid} />
                 </li>
               ))}
           </ul>
           <div className="grid__pagination">
-            <Pagination />
+            <Pagination pagination={pagination} />
           </div>
         </div>
       )}

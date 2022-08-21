@@ -1,16 +1,39 @@
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import './HomeSlide.scss';
 import imageUrl from '../../../api/imageUrl';
 import Button from '../forms/Button/Button';
+import {
+  isLoggedSelector,
+  wishlistSelector,
+} from '../../../store/user/userSelector';
+import { setWishlist } from '../../../store/user/userSlice';
 
 function HomeSlide({ item }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { backdrop_path, id, overview, release_date, vote_average, title } =
     item;
+
+  const isLogged = useSelector(isLoggedSelector);
+  const wishlist = useSelector(wishlistSelector);
+
+  const wishlistActive = wishlist.includes(id);
 
   const redirectHandler = () => {
     navigate(`/movie/${id}`);
   };
+
+  const wishlistHandler = () => {
+    if (!isLogged) {
+      alert('you must login before add wishlist');
+      navigate('/auth/sign-in');
+    }
+    if (isLogged) {
+      dispatch(setWishlist(id));
+    }
+  };
+
   return (
     <section className="home-slide">
       <div className="slide__background-image">
@@ -38,7 +61,12 @@ function HomeSlide({ item }) {
             Watch now
           </Button>
           {/* slide__wishlist--active */}
-          <div className="slide__wishlist">
+          <div
+            className={`slide__wishlist ${
+              wishlistActive ? 'slide__wishlist--active' : ''
+            }`}
+            onClick={wishlistHandler}
+          >
             <i className="fa-solid fa-heart slide__icon slide__icon--wishlist"></i>
           </div>
         </div>

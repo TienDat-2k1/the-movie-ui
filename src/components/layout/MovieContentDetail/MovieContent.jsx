@@ -1,16 +1,30 @@
-import './MovieContent.scss';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  isLoggedSelector,
+  wishlistSelector,
+} from '../../../store/user/userSelector.js';
+import { setWishlist } from '../../../store/user/userSlice.js';
 import imageUrl from '../../../api/imageUrl';
 import Button from '../forms/Button/Button';
 import MovieCast from '../MovieCast/MovieCast';
-import { useEffect, useState } from 'react';
 import api from '../../../api/tmdbApi';
 import MovieSimilar from '../MovieSimilar/MovieSimilar';
+import './MovieContent.scss';
+import { useNavigate } from 'react-router-dom';
 
 function MovieContent({ detailMovie }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [castList, setCastList] = useState();
   const [gridActive, setGridActive] = useState(false);
   const { id, title, overview, poster_path, release_date, genres } =
     detailMovie;
+
+  const isLogged = useSelector(isLoggedSelector);
+  const wishlist = useSelector(wishlistSelector);
+
+  const wishlistActive = wishlist.includes(id);
 
   useEffect(() => {
     const fetchCastList = async id => {
@@ -20,6 +34,16 @@ function MovieContent({ detailMovie }) {
     };
     fetchCastList(id);
   }, [id]);
+
+  const wishlistHandler = () => {
+    if (!isLogged) {
+      alert(' you must login before add to wishlist');
+      navigate('/auth/sign-in');
+    }
+    if (isLogged) {
+      dispatch(setWishlist(id));
+    }
+  };
 
   return (
     <section className="movie__content container">
@@ -41,8 +65,15 @@ function MovieContent({ detailMovie }) {
           </div>
           <div className="content__actions">
             <Button className="btn--primary">Watch</Button>
-            <div className="content__wishlist">
-              <i className="fa-solid fa-heart wishlist--icon"></i>
+            <div
+              className={`content__wishlist ${
+                wishlistActive ? 'content__wishlist--active' : ''
+              }`}
+            >
+              <i
+                className="fa-solid fa-heart wishlist--icon"
+                onClick={wishlistHandler}
+              ></i>
             </div>
             <div className="content__share">
               <i className="fa-solid fa-share-nodes share--icon"></i>
