@@ -8,7 +8,7 @@ const initialState = {
   wishlist: [],
 };
 
-const UserSlice = createSlice({
+const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
@@ -57,6 +57,6 @@ export const {
   signInError,
   setWishlist,
   signOut,
-} = UserSlice.actions;
+} = userSlice.actions;
 
-export default UserSlice.reducer;
+export default userSlice.reducer;
