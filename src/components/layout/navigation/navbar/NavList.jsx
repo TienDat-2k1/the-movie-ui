@@ -16,25 +16,19 @@ function NavList({ isNavMobile, setIsNavMobile }) {
         </NavLink>
       </div>
       <div className="nav__item">
-        <NavLink
-          to="/tvshow"
-          href="#"
-          className={({ isActive }) =>
-            isActive ? 'nav__link nav__link--active' : 'nav__link'
-          }
-        >
+        <a className="nav__link" href="#">
           TvShow
-        </NavLink>
+        </a>
       </div>
       <div className="nav__item">
-        <Link to="/series" href="#" className="nav__link">
+        <a href="#" className="nav__link">
           Series
-        </Link>
+        </a>
       </div>
       <div className="nav__item">
-        <Link to="/contact" href="#" className="nav__link">
+        <a href="#" className="nav__link">
           Contact
-        </Link>
+        </a>
       </div>
       <button
         className="nav__close"
