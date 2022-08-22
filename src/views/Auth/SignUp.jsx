@@ -49,7 +49,6 @@ function SignUp() {
   const formSubmitHandler = async e => {
     e.preventDefault();
 
-    console.log(inputField);
     dispatch(signUpStart(inputField));
     // const user = await createUser(email, password);
   };
@@ -59,8 +58,7 @@ function SignUp() {
       id: 1,
       name: 'displayName',
       type: 'text',
-      errorMessage:
-        "Display Name should be 3-16 characters and should't include any special character!",
+      errorMessage: 'Display Name should be 3-16 characters and it not empty',
       label: 'Display Name',
       required: true,
     },

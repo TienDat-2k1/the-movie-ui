@@ -18,8 +18,6 @@ import {
 import './Movie.scss';
 
 function Movie() {
-  console.log('rerender');
-
   const dispatch = useDispatch();
   const movieGrid = useSelector(movieGridSelect);
   const getTotalPage = useSelector(totalPageSelector);

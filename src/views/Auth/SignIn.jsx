@@ -40,8 +40,6 @@ function SignIn() {
     const { user } = await signInGooglePopup();
     const { uid, displayName, email, photoURL } = user;
 
-    console.log(user);
-
     dispatch(signInSuccess({ uid, displayName, email, photoUrl: photoURL }));
   };
 

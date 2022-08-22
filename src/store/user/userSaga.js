@@ -9,7 +9,6 @@ import { signInSuccess, signUpError, signUpSuccess } from './userSlice';
 
 function* signInAfterSignUp({ payload }) {
   try {
-    console.log(payload);
     const { uid, email, displayName, photoUrl } = payload;
     yield put(signInSuccess({ uid, email, displayName, photoUrl }));
   } catch (error) {
