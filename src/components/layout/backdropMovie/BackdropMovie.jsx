@@ -38,10 +38,12 @@ function BackdropMovie({ detailMovie }) {
             </p>
           </div>
         </div>
-        <Button className="btn--transparent backdrop__btn">
-          <i className="fa-solid fa-play backdrop__icon"></i>
-          <span>Trailer</span>
-        </Button>
+        <a href="#trailer">
+          <Button className="btn--transparent backdrop__btn">
+            <i className="fa-solid fa-play backdrop__icon"></i>
+            <span>Trailer</span>
+          </Button>
+        </a>
       </div>
     </section>
   );

@@ -71,7 +71,7 @@
   &__list {
     display: flex;
 
-    @include respond(tablet) {
+    @include respond(mobile) {
       flex-direction: column;
       position: fixed;
       left: 0;
@@ -101,20 +101,28 @@
   &__item {
     &:not(:last-child) {
       margin-right: 2rem;
-      @include respond(tablet) {
+      @include respond(mobile) {
         margin-right: 0;
       }
     }
 
-    @include respond(tablet) {
+    @include respond(mobile) {
       padding: 2rem 0;
       border-bottom: 2px solid $color--grey-dark-2;
     }
 
     &:active {
-      @include respond(tablet) {
+      @include respond(mobile) {
         background-color: $color--grey-dark-2;
         color: $color--primary;
+      }
+    }
+
+    &--account {
+      display: none;
+
+      @include respond(mobile) {
+        display: flex;
       }
     }
   }
@@ -201,7 +209,7 @@
   &__toggle {
     display: none;
 
-    @include respond(tablet) {
+    @include respond(mobile) {
       display: block;
     }
 
@@ -216,7 +224,7 @@
     background-color: transparent;
     color: $color--grey-light-1;
 
-    @include respond(tablet) {
+    @include respond(mobile) {
       display: block;
       position: absolute;
       top: 0;
@@ -344,6 +352,37 @@
   & label {
     :hover {
       background-color: transparent;
+    }
+  }
+}
+
+// * Nav List Item Account
+.account {
+  &__img {
+    margin-left: 2rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    & h4 {
+      transform: translateX(-20%);
+    }
+    & i {
+      font-size: 3rem;
     }
   }
 }

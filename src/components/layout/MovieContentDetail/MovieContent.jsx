@@ -12,6 +12,7 @@ import api from '../../../api/tmdbApi';
 import MovieSimilar from '../MovieSimilar/MovieSimilar';
 import './MovieContent.scss';
 import { useNavigate } from 'react-router-dom';
+import MovieTrailer from './MovieTrailer.jsx';
 
 function MovieContent({ detailMovie }) {
   const navigate = useNavigate();
@@ -125,6 +126,8 @@ function MovieContent({ detailMovie }) {
           </h4>
           <MovieCast castList={castList} />
         </div>
+
+        <MovieTrailer title={title} id={id} />
       </div>
       <div className="movie__similar">
         <MovieSimilar movieId={id} />

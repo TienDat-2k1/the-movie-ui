@@ -24,7 +24,7 @@ function NavAction({ className }) {
     if (searchInput) return;
     const removeActive = setTimeout(() => {
       setIsNotSearchActive(true);
-    }, 5000);
+    }, 30000);
     return () => {
       clearTimeout(removeActive);
     };
