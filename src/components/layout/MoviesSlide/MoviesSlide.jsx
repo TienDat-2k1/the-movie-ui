@@ -7,8 +7,13 @@ import Slider from 'react-slick';
 import './MoviesSlide.scss';
 import NextSlideArrow from '../arrow/HomeSlideArrow/NextSlideArrow';
 import PrevSlideArrow from '../arrow/HomeSlideArrow/PrevSlideArrow';
+import { useDispatch } from 'react-redux';
+import { setSortType } from '../../../store/movie/movieSlice';
+import { useNavigate } from 'react-router-dom';
 
 function MoviesSlide({ title }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [movies, setMovies] = useState();
 
   useEffect(() => {
@@ -71,6 +76,11 @@ function MoviesSlide({ title }) {
     nextArrow: <NextSlideArrow />,
     prevArrow: <PrevSlideArrow />,
   };
+
+  const seeallRedirectHandler = () => {
+    dispatch(setSortType(title));
+    navigate('/movie');
+  };
   return (
     <>
       {!movies && <Spinner />}
@@ -80,7 +90,9 @@ function MoviesSlide({ title }) {
             {title.replace('_', ' ')}
           </h2>
           <div className="movies__actions">
-            <span className="movies__seeall">See all &gt;</span>
+            <span className="movies__seeall" onClick={seeallRedirectHandler}>
+              See all &gt;
+            </span>
           </div>
 
           <ul className="movies__list">
