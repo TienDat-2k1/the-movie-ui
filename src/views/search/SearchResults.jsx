@@ -21,7 +21,7 @@ function SearchResults() {
       if (!key) return;
       const res = await fetch(
         api(
-          'search/multi',
+          'search/movie',
           `&language=en-US&query=${key}&page=${page}&include_adult=false`
         )
       );
@@ -48,8 +48,8 @@ function SearchResults() {
           {`Results for "${searchKey.toUpperCase()}" . . .`}
         </h4>
       </div>
-      {!searchResults?.results && <ResultsNotFound />}
-      {searchResults?.results && (
+      {!searchResults?.results?.length && <ResultsNotFound />}
+      {searchResults?.results?.length && (
         <MovieGrid movieGrid={searchResults.results} pagination={pagination} />
       )}
     </main>
